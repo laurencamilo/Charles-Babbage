@@ -1,222 +1,220 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Babbage: O PAI DO COMPUTADOR</title>
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Header e Navegação */
+header {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00adb5;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80') center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00adb5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #007b80;
+}
+
+/* Containers e Seções */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.bg-light {
+    background-color: #f0f2f5;
+}
+
+.bg-dark {
+    background-color: #1a1a2e;
+}
+
+.text-white {
+    color: white;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+}
+
+.bg-dark h2 {
+    color: white;
+}
+
+/* Grids e Layouts */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.card-highlight {
+    background: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #00adb5;
+}
+
+.card-highlight ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.card-highlight li {
+    margin-bottom: 8px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #00adb5;
+    margin-bottom: 10px;
+}
+
+/* Timeline */
+.timeline-item {
+    border-left: 3px solid #00adb5;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-item h3 {
+    margin-bottom: 5px;
+}
+
+/* Seção Interativa */
+#fact-btn {
+    background-color: #00adb5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#fact-btn:hover {
+    background-color: #007b80;
+}
+
+.fact-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 80px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #777;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
     
-    <!-- Vinculação do arquivo CSS externo (Certifique-se de que o arquivo 'style.css' está na mesma pasta) -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    .nav-container {
+        flex-direction: column;
+    }
 
-    <!-- CABEÇALHO / NAVBAR ESTILO NEWS PORTAL -->
-    <header class="header-portal">
-        <div class="header-container">
-            <div class="header-brand">
-                <span class="brand-text">TECNOLOGIA</span>
-            </div>
-            <nav class="header-nav">
-                <a href="#">últimas notícias</a>
-                <a href="#">inovação</a>
-                <a href="#">história da t.i.</a>
-                <a href="#">ciência</a>
-            </nav>
-            <div class="header-search">
-                <input type="text" placeholder="Buscar no portal...">
-                <button type="button">Buscar</button>
-            </div>
-        </div>
-    </header>
+    nav ul {
+        margin-top: 10px;
+    }
 
-    <div class="sub-bar">
-        <div class="sub-bar-container">
-            <span>ESPECIAL HISTÓRIA DA COMPUTAÇÃO</span>
-        </div>
-    </div>
-
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="main-container">
-        
-        <!-- COLUNA DA NOTÍCIA -->
-        <article class="article-container">
-            <header class="article-header">
-                <span class="category-tag">HISTÓRIA DA TECNOLOGIA</span>
-                <h1 class="article-title">Charles Babbage: O homem que projetou o futuro da computação no século XIX</h1>
-                <h2 class="article-subtitle">Conheça a trajetória do matemático britânico que idealizou os primeiros computadores mecânicos da história e transformou a ciência moderna.</h2>
-                
-                <div class="article-meta">
-                    <div class="author-info">
-                        <strong>Por Redação Tecnologia</strong>
-                        <time datetime="2026-09-17">17/09/2026 10h00 • Atualizado há 2 horas</time>
-                    </div>
-                    <div class="text-resizer">
-                        <span>Tamanho da fonte:</span>
-                        <button id="btn-decrease">A-</button>
-                        <button id="btn-increase">A+</button>
-                    </div>
-                </div>
-            </header>
-
-            <div class="lead-image-container">
-                <div class="placeholder-img">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <path d="M21 15l-5-5L5 21"/>
-                    </svg>
-                    <span>Retrato Histórico de Charles Babbage (1791 - 1871)</span>
-                </div>
-                <p class="caption">Charles Babbage foi um polímata, matemático, inventor e engenheiro mecânico britânico.</p>
-            </div>
-
-            <!-- CORPO DO TEXTO DA NOTÍCIA -->
-            <div class="article-body" id="article-text">
-                <p class="lead-paragraph">
-                    Muito antes da invenção dos microchips, dos circuitos eletrônicos ou da internet, um matemático inglês vislumbrou uma máquina capaz de realizar cálculos complexos sem a intervenção humana. Esse homem era <strong>Charles Babbage</strong>, hoje amplamente reconhecido como o "Pai da Computação".
-                </p>
-
-                <p>
-                    Nascido em Londres no final do século XVIII, Babbage viveu em uma época em que tabelas matemáticas eram calculadas manualmente por humanos conhecidos como "computadores". Esse processo manual gerava inúmeros erros em cálculos de navegação, astronomia e engenharia.
-                </p>
-
-                <h3>A Máquina Diferencial</h3>
-                <p>
-                    Para resolver o problema dos erros humanos, Babbage projetou em 1822 a <strong>Máquina Diferencial</strong>, um dispositivo totalmente mecânico composto por engrenagens, manivelas e rodas dentes que utilizava o método das diferenças finitas para calcular funções polinomials.
-                </p>
-
-                <!-- SIMULADOR INTERATIVO -->
-                <div class="widget-box">
-                    <h4>Simulador da Máquina Diferencial</h4>
-                    <p class="widget-desc">Simule o funcionamento básico da lógica polinomial idealizada por Babbage (f(x) = x² + x + 41):</p>
-                    <div class="sim-controls">
-                        <label for="input-x">Valor de X:</label>
-                        <input type="number" id="input-x" value="1" min="1" max="100">
-                        <button id="btn-calcular">Girar Engrenagens</button>
-                    </div>
-                    <div class="sim-result" id="sim-output">
-                        Resultado: <strong>43</strong>
-                    </div>
-                </div>
-
-                <h3>A Máquina Analítica e a Parceria com Ada Lovelace</h3>
-                <p>
-                    Apesar de não ter concluído a montagem da Máquina Diferencial devido a limitações orçamentárias e técnicas da época, Babbage deu um passo ainda mais audacioso: a <strong>Máquina Analítica</strong>.
-                </p>
-                <p>
-                    Essa nova máquina continha todos os elementos essenciais de um computador moderno:
-                </p>
-                <ul>
-                    <li><strong>A Unidade de Processamento:</strong> Chamada por ele de "Mill" (Moinho).</li>
-                    <li><strong>A Memória:</strong> Chamada de "Store" (Armazém).</li>
-                    <li><strong>Entrada de Dados:</strong> Feita através de cartões perfurados.</li>
-                </ul>
-
-                <p>
-                    Foi durante o desenvolvimento desse projeto que a matemática <strong>Ada Lovelace</strong> escreveu o primeiro algoritmo da história destinado a ser processado por uma máquina, tornando-se a primeira programadora do mundo.
-                </p>
-
-                <!-- GUIA DE LINHA DO TEMPO EM ABAS -->
-                <div class="timeline-box">
-                    <h4>Linha do Tempo de Babbage</h4>
-                    <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="tab-1791">1791</button>
-                        <button class="tab-btn" data-tab="tab-1822">1822</button>
-                        <button class="tab-btn" data-tab="tab-1837">1837</button>
-                        <button class="tab-btn" data-tab="tab-1871">1871</button>
-                    </div>
-                    <div class="tab-content active" id="tab-1791">
-                        <strong>Nascimento:</strong> Charles Babbage nasce em 26 de dezembro de 1791 em Londres, Inglaterra.
-                    </div>
-                    <div class="tab-content" id="tab-1822">
-                        <strong>Primeiro Projeto:</strong> Apresenta o conceito da Máquina Diferencial para a Royal Astronomical Society.
-                    </div>
-                    <div class="tab-content" id="tab-1837">
-                        <strong>A Máquina Analítica:</strong> Projeta o primeiro modelo teórico de um computador programável de uso geral.
-                    </div>
-                    <div class="tab-content" id="tab-1871">
-                        <strong>Legado:</strong> Babbage falece aos 79 anos, deixando projetos que só seriam construídos com sucesso décadas mais tarde.
-                    </div>
-                </div>
-
-                <h3>O Legado na Tecnologia Atual</h3>
-                <p>
-                    Embora suas máquinas não tenham sido construídas inteiramente durante sua vida, os desenhos detalhados de Babbage provaram-se perfeitamente funcionais. Em 1991, o Museu de Ciência de Londres construiu uma Máquina Diferencial Nº 2 funcional utilizando exatamente as especificações e materiais disponíveis no século XIX.
-                </p>
-            </div>
-
-            <!-- SEÇÃO DE COMENTÁRIOS -->
-            <section class="comments-section">
-                <h3>Comentários (<span id="comments-count">2</span>)</h3>
-
-                <div class="add-comment-box">
-                    <input type="text" id="author-input" placeholder="Seu nome">
-                    <textarea id="comment-input" rows="3" placeholder="Escreva seu comentário..."></textarea>
-                    <button id="btn-submit-comment">Enviar comentário</button>
-                </div>
-
-                <div class="comments-list" id="comments-container">
-                    <div class="comment-item">
-                        <div class="comment-header">
-                            <strong>Carlos Eduardo</strong>
-                            <time>Há 1 hora</time>
-                        </div>
-                        <p class="comment-text">Incrível pensar que a lógica do computador que uso hoje foi pensada no século 19 com engrenagens mecânicas!</p>
-                        <div class="comment-actions">
-                            <button class="like-btn">Gostei (<span class="like-count">12</span>)</button>
-                        </div>
-                    </div>
-
-                    <div class="comment-item">
-                        <div class="comment-header">
-                            <strong>Mariana Silva</strong>
-                            <time>Há 30 minutos</time>
-                        </div>
-                        <p class="comment-text">Ada Lovelace e Charles Babbage formaram a dupla mais importante da história da tecnologia!</p>
-                        <div class="comment-actions">
-                            <button class="like-btn">Gostei (<span class="like-count">8</span>)</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </article>
-
-        <!-- BARRA LATERAL (SIDEBAR) -->
-        <aside class="sidebar-container">
-            <div class="sidebar-block">
-                <h3 class="sidebar-title">Mais lidas</h3>
-                <ol class="top-reads-list">
-                    <li><a href="#">Como Ada Lovelace criou o primeiro programa de computador</a></li>
-                    <li><a href="#">A evolução dos processadores: De engrenagens a transístores</a></li>
-                    <li><a href="#">Museu reconstruiu calculadora de Babbage que funciona perfeitamente</a></li>
-                    <li><a href="#">O que eram os "computadores humanos" do século XVIII?</a></li>
-                </ol>
-            </div>
-
-            <div class="sidebar-block poll-box">
-                <h3 class="sidebar-title">Enquete</h3>
-                <p>Você sabia que o primeiro conceito de computador era totalmente mecânico?</p>
-                <div class="poll-options">
-                    <button class="poll-btn" data-vote="sim">Sim, já sabia</button>
-                    <button class="poll-btn" data-vote="nao">Não, fiquei sabendo agora</button>
-                </div>
-                <div class="poll-results" id="poll-results" style="display: none;">
-                    <p>Sim: <strong id="count-sim">0%</strong></p>
-                    <p>Não: <strong id="count-nao">0%</strong></p>
-                </div>
-            </div>
-        </aside>
-
-    </main>
-
-    <!-- RODAPÉ -->
-    <footer class="footer-portal">
-        <div class="footer-container">
-            <p>&copy; 2026 Portal de Notícias Tecnologia. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <!-- Vinculação do arquivo JavaScript externo -->
-    <script src="script.js"></script>
-</body>
-</html>
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
