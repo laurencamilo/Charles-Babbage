@@ -3,111 +3,402 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Babbage - O Pai do Computador</title>
+
+    <title>Charles Babbage | Pai da Computação</title>
+
     <link rel="stylesheet" href="style.css">
-    <!-- Fonte externa para um visual moderno -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <!-- Cabeçalho / Navegação -->
+    <!-- Cabeçalho -->
     <header>
-        <div class="nav-container">
-            <h1 class="logo">C. Babbage</h1>
-            <nav>
-                <ul>
-                    <li><a href="#sobre">Quem Foi</a></li>
-                    <li><a href="#invencoes">Invenções</a></li>
-                    <li><a href="#impacto">Impacto na Tecnologia</a></li>
-                    <li><a href="#curiosidades">Curiosidades</a></li>
-                </ul>
-            </nav>
-        </div>
+        <nav class="navbar">
+            <div class="logo">Charles Babbage</div>
+
+            <button class="menu-btn" id="menuBtn">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#vida">Sua Vida</a></li>
+                <li><a href="#inventos">Invenções</a></li>
+                <li><a href="#revolucao">Revolução Tecnológica</a></li>
+                <li><a href="#legado">Legado</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Banner Principal -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Charles Babbage</h2>
-            <p>O matemático e visionário do século XIX considerado o "Pai do Computador".</p>
-            <a href="#sobre" class="btn">Explorar História</a>
-        </div>
-    </section>
+    <!-- Hero -->
+    <main>
 
-    <!-- Seção: Quem foi -->
-    <section id="sobre" class="container">
-        <h2>Quem Foi Charles Babbage?</h2>
-        <div class="grid-2">
-            <div>
-                <p><strong>Charles Babbage</strong> (1791–1871) foi um matemático, inventor, filósofo e engenheiro mecânico britânico. Nascido em Londres, ele viveu durante a Revolução Industrial — uma época em que cálculos matemáticos eram feitos manualmente, gerando erros frequentes em tabelas de navegação e engenharia.</p>
-                <p>Impulsionado pela busca por precisão absoluta, Babbage dedicou sua vida a projetar máquinas mecânicas capazes de realizar cálculos complexos sem a intervenção de erros humanos.</p>
-            </div>
-            <div class="card-highlight">
-                <h3>Dados Rápidos</h3>
-                <ul>
-                    <li><strong>Nascimento:</strong> 26 de Dezembro de 1791 (Londres)</li>
-                    <li><strong>Falecimento:</strong> 18 de Outubro de 1871 (80 anos)</li>
-                    <li><strong>Profissão:</strong> Matemático e Inventor</li>
-                    <li><strong>Parceria Famosa:</strong> Ada Lovelace</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        <section class="hero" id="inicio">
 
-    <!-- Seção: Invenções -->
-    <section id="invencoes" class="bg-light">
-        <div class="container">
-            <h2>Suas Principais Obra-Primas</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Máquina de Diferenças</h3>
-                    <p>Projetada na década de 1820, era um computador mecânico projetado para calcular e tabular funções polinomials. Embora nunca tenha sido totalmente construída enquanto ele vivia, demonstrou o potencial da automação.</p>
+            <div class="hero-content">
+                <span class="tag">HISTÓRIA DA TECNOLOGIA</span>
+
+                <h1>Charles<br><span>Babbage</span></h1>
+
+                <p>
+                    O matemático e inventor que imaginou máquinas capazes
+                    de realizar cálculos automaticamente e ajudou a lançar
+                    as bases da computação moderna.
+                </p>
+
+                <a href="#vida" class="btn">Conheça sua história</a>
+            </div>
+
+            <div class="hero-card">
+                <div class="gear">⚙</div>
+                <h2>1791 — 1871</h2>
+                <p>Matemático, inventor e pioneiro da computação.</p>
+            </div>
+
+        </section>
+
+        <!-- Vida -->
+        <section class="section" id="vida">
+
+            <div class="section-title">
+                <span>01</span>
+                <h2>Quem foi Charles Babbage?</h2>
+            </div>
+
+            <div class="two-columns">
+
+                <div>
+                    <p>
+                        Charles Babbage nasceu em <strong>26 de dezembro de 1791</strong>,
+                        na Inglaterra. Foi matemático, engenheiro, filósofo e inventor.
+                        Durante sua vida, dedicou grande parte de seus esforços ao
+                        desenvolvimento de máquinas capazes de automatizar cálculos.
+                    </p>
+
+                    <p>
+                        No século XIX, cálculos matemáticos eram frequentemente
+                        realizados manualmente. Esse processo era demorado e estava
+                        sujeito a erros humanos. Babbage acreditava que uma máquina
+                        poderia executar esses cálculos de maneira automática.
+                    </p>
+
+                    <p>
+                        Suas ideias eram extremamente avançadas para sua época e
+                        anteciparam vários conceitos que posteriormente seriam
+                        fundamentais para os computadores.
+                    </p>
                 </div>
-                <div class="card">
+
+                <div class="info-box">
+                    <h3>Charles Babbage</h3>
+
+                    <ul>
+                        <li><strong>Nascimento:</strong> 26 de dezembro de 1791</li>
+                        <li><strong>Falecimento:</strong> 18 de outubro de 1871</li>
+                        <li><strong>País:</strong> Inglaterra</li>
+                        <li><strong>Área:</strong> Matemática e engenharia</li>
+                        <li><strong>Principal contribuição:</strong> Máquinas de cálculo mecânicas</li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Linha do tempo -->
+        <section class="timeline-section">
+
+            <div class="section-title center">
+                <span>02</span>
+                <h2>Linha do tempo</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1791</div>
+                    <div class="timeline-content">
+                        <h3>Nasce Charles Babbage</h3>
+                        <p>
+                            Babbage nasce na Inglaterra e posteriormente
+                            desenvolve interesse por matemática e engenharia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1816</div>
+                    <div class="timeline-content">
+                        <h3>Royal Society</h3>
+                        <p>
+                            Babbage é eleito membro da Royal Society,
+                            uma das principais instituições científicas
+                            britânicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1822</div>
+                    <div class="timeline-content">
+                        <h3>Máquina Diferencial</h3>
+                        <p>
+                            Babbage apresenta sua proposta para uma máquina
+                            capaz de automatizar determinados cálculos matemáticos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1830s</div>
+                    <div class="timeline-content">
+                        <h3>Máquina Analítica</h3>
+                        <p>
+                            Babbage começa a desenvolver uma ideia ainda mais
+                            ambiciosa: uma máquina programável de propósito geral.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1871</div>
+                    <div class="timeline-content">
+                        <h3>Falecimento</h3>
+                        <p>
+                            Charles Babbage morre em Londres, deixando projetos
+                            que influenciariam a história da computação.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Inventos -->
+        <section class="section" id="inventos">
+
+            <div class="section-title">
+                <span>03</span>
+                <h2>Suas grandes invenções</h2>
+            </div>
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-icon">⚙️</div>
+
+                    <h3>Máquina Diferencial</h3>
+
+                    <p>
+                        Projetada para realizar automaticamente cálculos
+                        matemáticos utilizando engrenagens e mecanismos
+                        mecânicos.
+                    </p>
+
+                    <button class="learn-more"
+                        data-title="Máquina Diferencial"
+                        data-text="A Máquina Diferencial foi projetada para calcular automaticamente tabelas matemáticas. Babbage pretendia reduzir os erros produzidos pelos cálculos manuais. Uma versão posterior foi construída com sucesso a partir de seus projetos.">
+                        Saiba mais
+                    </button>
+                </article>
+
+                <article class="card featured">
+                    <div class="card-icon">💻</div>
+
                     <h3>Máquina Analítica</h3>
-                    <p>Idealizada em 1837, é considerada o <strong>primeiro antepassado do computador moderno</strong>. Possuía uma Unidade Central de Processamento (o "Mill"), memória (o "Store") e aceitava entrada via cartões perfurados.</p>
+
+                    <p>
+                        Um projeto muito mais avançado, considerado um dos
+                        primeiros conceitos de um computador programável.
+                    </p>
+
+                    <button class="learn-more"
+                        data-title="Máquina Analítica"
+                        data-text="A Máquina Analítica possuía conceitos semelhantes aos encontrados em computadores modernos: memória, unidade de processamento, entrada e saída de dados e a possibilidade de utilizar cartões perfurados para instruções.">
+                        Saiba mais
+                    </button>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon">📜</div>
+
+                    <h3>Cartões perfurados</h3>
+
+                    <p>
+                        Babbage pretendia utilizar cartões perfurados para
+                        fornecer instruções à Máquina Analítica.
+                    </p>
+
+                    <button class="learn-more"
+                        data-title="Cartões perfurados"
+                        data-text="A ideia de utilizar cartões perfurados para controlar operações foi inspirada em tecnologias utilizadas em máquinas de tecelagem, especialmente no trabalho de Joseph Marie Jacquard.">
+                        Saiba mais
+                    </button>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Revolução -->
+        <section class="revolution" id="revolucao">
+
+            <div class="revolution-content">
+
+                <span class="tag">A REVOLUÇÃO TECNOLÓGICA</span>
+
+                <h2>Uma ideia que estava<br>à frente de seu tempo.</h2>
+
+                <p>
+                    Babbage não construiu um computador eletrônico como
+                    conhecemos hoje. Porém, seus projetos apresentavam
+                    conceitos que se tornariam importantes na computação.
+                </p>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <strong>01</strong>
+                        <span>Processamento automático</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>02</strong>
+                        <span>Memória</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>03</strong>
+                        <span>Programação</span>
+                    </div>
+
+                    <div class="stat">
+                        <strong>04</strong>
+                        <span>Entrada e saída</span>
+                    </div>
+
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Seção: Impacto Tecnológico -->
-    <section id="impacto" class="container">
-        <h2>O Impacto na Revolução da Tecnologia</h2>
-        <p class="intro-text">Como os conceitos de Babbage moldaram o futuro da computação moderna:</p>
-        
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Conceito da Arquitetura de Computadores</h3>
-                <p>A Máquina Analítica já separava o processamento da memória, uma estrutura equivalente à arquitetura moderna utilizada nos processadores atuais (Arquitetura de Von Neumann).</p>
             </div>
-            <div class="timeline-item">
-                <h3>A Origem da Programação (Com Ada Lovelace)</h3>
-                <p>Ao trabalhar com a Máquina Analítica, a matemática Ada Lovelace escreveu o primeiro algoritmo da história para ser processado por uma máquina, tornando-se a primeira programadora do mundo.</p>
-            </div>
-            <div class="timeline-item">
-                <h3>Uso de Cartões Perfurados</h3>
-                <p>Babbage adaptou a ideia dos teares mecânicos de Jacquard para alimentar dados na máquina, o que mais tarde serviu de base para as primeiras gerações de computadores do século XX (como os da IBM).</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Seção Interativa (Curiosidades) -->
-    <section id="curiosidades" class="bg-dark text-white">
-        <div class="container">
-            <h2>Curiosidades</h2>
-            <button id="fact-btn">Clique para ver um fato sobre Babbage</button>
-            <div id="fact-display" class="fact-box">
-                <p>Clique no botão acima para descobrir algo fascinante!</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Rodapé -->
+        <!-- Ada Lovelace -->
+        <section class="section">
+
+            <div class="section-title">
+                <span>04</span>
+                <h2>Babbage e Ada Lovelace</h2>
+            </div>
+
+            <div class="two-columns">
+
+                <div class="quote-box">
+                    <span>“</span>
+                    <p>
+                        A Máquina Analítica representava uma nova forma
+                        de pensar sobre máquinas e cálculos.
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Charles Babbage manteve uma importante colaboração
+                        intelectual com <strong>Ada Lovelace</strong>, matemática
+                        britânica que estudou profundamente a Máquina Analítica.
+                    </p>
+
+                    <p>
+                        Em suas notas sobre a máquina, Ada descreveu um método
+                        para calcular números de Bernoulli. Por isso, seu trabalho
+                        é frequentemente associado à história da programação.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Legado -->
+        <section class="section dark-section" id="legado">
+
+            <div class="section-title">
+                <span>05</span>
+                <h2>O legado de Babbage</h2>
+            </div>
+
+            <p class="large-text">
+                As máquinas de Babbage ajudaram a demonstrar que cálculos
+                poderiam ser executados por mecanismos seguindo instruções.
+                Décadas depois, computadores eletrônicos tornariam esse
+                princípio uma realidade.
+            </p>
+
+            <div class="legacy-grid">
+
+                <div>
+                    <span>01</span>
+                    <h3>Automação</h3>
+                    <p>
+                        A ideia de automatizar cálculos foi central em seus projetos.
+                    </p>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <h3>Programação</h3>
+                    <p>
+                        A Máquina Analítica foi projetada para receber instruções.
+                    </p>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <h3>Computação</h3>
+                    <p>
+                        Seus conceitos anteciparam características de computadores.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal">
+                ×
+            </button>
+
+            <h2 id="modalTitle"></h2>
+            <p id="modalText"></p>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; Site Educativo sobre Charles Babbage | Criado para fins acadêmicos.</p>
+
+        <h2>Charles Babbage</h2>
+
+        <p>
+            Um dos pioneiros da computação mecânica.
+        </p>
+
+        <p class="copyright">
+            © 2026 — Site educativo sobre a história da tecnologia.
+        </p>
+
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
