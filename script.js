@@ -1,220 +1,124 @@
-/* Configurações Globais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+// ==============================
+// MENU MOBILE
+// ==============================
 
-body {
-    font-family: 'Inter', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-}
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
 
-/* Header e Navegação */
-header {
-    background-color: #1a1a2e;
-    color: white;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
-.nav-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+// Fecha o menu quando um link é clicado
 
-nav ul li {
-    margin-left: 20px;
-}
+document.querySelectorAll(".nav-links a").forEach(link => {
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
 
-nav ul li a:hover {
-    color: #00adb5;
-}
+});
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80') center/cover;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
-}
 
-.hero h2 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
+// ==============================
+// MODAL
+// ==============================
 
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
+const modal = document.getElementById("modal");
+const modalTitle = document.getElementById("modalTitle");
+const modalText = document.getElementById("modalText");
+const closeModal = document.getElementById("closeModal");
 
-.btn {
-    display: inline-block;
-    background: #00adb5;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
+const buttons = document.querySelectorAll(".learn-more");
 
-.btn:hover {
-    background: #007b80;
-}
+buttons.forEach(button => {
 
-/* Containers e Seções */
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
+    button.addEventListener("click", () => {
 
-.bg-light {
-    background-color: #f0f2f5;
-}
+        const title = button.getAttribute("data-title");
+        const text = button.getAttribute("data-text");
 
-.bg-dark {
-    background-color: #1a1a2e;
-}
+        modalTitle.textContent = title;
+        modalText.textContent = text;
 
-.text-white {
-    color: white;
-}
+        modal.classList.add("active");
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #1a1a2e;
-}
+    });
 
-.bg-dark h2 {
-    color: white;
-}
+});
 
-/* Grids e Layouts */
-.grid-2 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 30px;
-}
 
-.card-highlight {
-    background: #e2e8f0;
-    padding: 20px;
-    border-radius: 8px;
-    border-left: 5px solid #00adb5;
-}
+// Fecha o modal
 
-.card-highlight ul {
-    list-style: none;
-    margin-top: 10px;
-}
+closeModal.addEventListener("click", () => {
 
-.card-highlight li {
-    margin-bottom: 8px;
-}
+    modal.classList.remove("active");
 
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+});
 
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
 
-.card h3 {
-    color: #00adb5;
-    margin-bottom: 10px;
-}
+// Fecha clicando fora da janela
 
-/* Timeline */
-.timeline-item {
-    border-left: 3px solid #00adb5;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
+modal.addEventListener("click", (event) => {
 
-.timeline-item h3 {
-    margin-bottom: 5px;
-}
-
-/* Seção Interativa */
-#fact-btn {
-    background-color: #00adb5;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-#fact-btn:hover {
-    background-color: #007b80;
-}
-
-.fact-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    min-height: 80px;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #111;
-    color: #777;
-}
-
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
-    
-    .nav-container {
-        flex-direction: column;
+    if (event.target === modal) {
+        modal.classList.remove("active");
     }
 
-    nav ul {
-        margin-top: 10px;
+});
+
+
+// Fecha com a tecla ESC
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+        modal.classList.remove("active");
     }
 
-    .hero h2 {
-        font-size: 2rem;
+});
+
+
+// ==============================
+// ANIMAÇÃO AO ROLAR A PÁGINA
+// ==============================
+
+const elements = document.querySelectorAll(
+    ".card, .timeline-item, .info-box, .quote-box, .legacy-grid div"
+);
+
+const observer = new IntersectionObserver(
+    (entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.15
     }
-}
+);
+
+
+// Estado inicial dos elementos
+
+elements.forEach(element => {
+
+    element.style.opacity = "0";
+    element.style.transform = "translateY(30px)";
+    element.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+
+    observer.observe(element);
+
+});
