@@ -1,143 +1,220 @@
-document.addEventListener('DOMContentLoaded', () => {
+/* Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    // 1. AJUSTE DE TAMANHO DA FONTE
-    const articleText = document.getElementById('article-text');
-    const btnIncrease = document.getElementById('btn-increase');
-    const btnDecrease = document.getElementById('btn-decrease');
-    let currentFontSize = 16;
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
 
-    btnIncrease.addEventListener('click', () => {
-        if (currentFontSize < 22) {
-            currentFontSize += 2;
-            articleText.style.fontSize = `${currentFontSize}px`;
-        }
-    });
+/* Header e Navegação */
+header {
+    background-color: #1a1a2e;
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
-    btnDecrease.addEventListener('click', () => {
-        if (currentFontSize > 12) {
-            currentFontSize -= 2;
-            articleText.style.fontSize = `${currentFontSize}px`;
-        }
-    });
+.nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-    // 2. SIMULADOR DA MÁQUINA DIFERENCIAL
-    // Fórmula polinomial simples para demonstração: f(x) = x^2 + x + 41 (Fórmula de Euler)
-    const inputX = document.getElementById('input-x');
-    const btnCalcular = document.getElementById('btn-calcular');
-    const simOutput = document.getElementById('sim-output');
+nav ul {
+    display: flex;
+    list-style: none;
+}
 
-    btnCalcular.addEventListener('click', () => {
-        const x = parseInt(inputX.value) || 0;
-        const resultado = (x * x) + x + 41;
-        simOutput.innerHTML = `Resultado para X = ${x}: <strong>${resultado}</strong>`;
-    });
+nav ul li {
+    margin-left: 20px;
+}
 
-    // 3. ABAS DA LINHA DO TEMPO
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
 
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const targetTab = btn.getAttribute('data-tab');
+nav ul li a:hover {
+    color: #00adb5;
+}
 
-            tabButtons.forEach(b => b.classList.remove('active'));
-            tabContents.forEach(c => c.classList.remove('active'));
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1350&q=80') center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
 
-            btn.classList.add('active');
-            document.getElementById(targetTab).classList.add('active');
-        });
-    });
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
 
-    // 4. ENQUETE INTERATIVA
-    const pollButtons = document.querySelectorAll('.poll-btn');
-    const pollResults = document.getElementById('poll-results');
-    const countSim = document.getElementById('count-sim');
-    const countNao = document.getElementById('count-nao');
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 
-    pollButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const vote = btn.getAttribute('data-vote');
-            
-            // Simulação de percentuais de votação
-            if (vote === 'sim') {
-                countSim.innerText = '78%';
-                countNao.innerText = '22%';
-            } else {
-                countSim.innerText = '77%';
-                countNao.innerText = '23%';
-            }
+.btn {
+    display: inline-block;
+    background: #00adb5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
 
-            document.querySelector('.poll-options').style.display = 'none';
-            pollResults.style.display = 'block';
-        });
-    });
+.btn:hover {
+    background: #007b80;
+}
 
-    // 5. SEÇÃO DE COMENTÁRIOS DINÂMICA
-    const btnSubmitComment = document.getElementById('btn-submit-comment');
-    const authorInput = document.getElementById('author-input');
-    const commentInput = document.getElementById('comment-input');
-    const commentsContainer = document.getElementById('comments-container');
-    const commentsCount = document.getElementById('comments-count');
+/* Containers e Seções */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
 
-    let totalComments = 2;
+.bg-light {
+    background-color: #f0f2f5;
+}
 
-    btnSubmitComment.addEventListener('click', () => {
-        const author = authorInput.value.trim();
-        const text = commentInput.value.trim();
+.bg-dark {
+    background-color: #1a1a2e;
+}
 
-        if (author === '' || text === '') {
-            alert('Por favor, preencha o seu nome e o comentário.');
-            return;
-        }
+.text-white {
+    color: white;
+}
 
-        // Criar elemento de comentário
-        const newComment = document.createElement('div');
-        newComment.classList.add('comment-item');
-        newComment.innerHTML = `
-            <div class="comment-header">
-                <strong>${escapeHtml(author)}</strong>
-                <time>Agora mesmo</time>
-            </div>
-            <p class="comment-text">${escapeHtml(text)}</p>
-            <div class="comment-actions">
-                <button class="like-btn">Gostei (<span class="like-count">0</span>)</button>
-            </div>
-        `;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+}
 
-        commentsContainer.prepend(newComment);
+.bg-dark h2 {
+    color: white;
+}
 
-        // Atualizar contador
-        totalComments++;
-        commentsCount.innerText = totalComments;
+/* Grids e Layouts */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
 
-        // Limpar campos
-        authorInput.value = '';
-        commentInput.value = '';
+.card-highlight {
+    background: #e2e8f0;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 5px solid #00adb5;
+}
 
-        // Adicionar evento ao botão de curtir do novo comentário
-        attachLikeEvent(newComment.querySelector('.like-btn'));
-    });
+.card-highlight ul {
+    list-style: none;
+    margin-top: 10px;
+}
 
-    // Lógica para curtir comentários
-    function attachLikeEvent(button) {
-        button.addEventListener('click', function() {
-            const countSpan = this.querySelector('.like-count');
-            let currentLikes = parseInt(countSpan.innerText);
-            countSpan.innerText = currentLikes + 1;
-            this.disabled = true;
-            this.style.opacity = '0.6';
-        });
+.card-highlight li {
+    margin-bottom: 8px;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    color: #00adb5;
+    margin-bottom: 10px;
+}
+
+/* Timeline */
+.timeline-item {
+    border-left: 3px solid #00adb5;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.timeline-item h3 {
+    margin-bottom: 5px;
+}
+
+/* Seção Interativa */
+#fact-btn {
+    background-color: #00adb5;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#fact-btn:hover {
+    background-color: #007b80;
+}
+
+.fact-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    min-height: 80px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #111;
+    color: #777;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-container {
+        flex-direction: column;
     }
 
-    document.querySelectorAll('.like-btn').forEach(btn => attachLikeEvent(btn));
-
-    // Função de segurança simples para evitar XSS ao inserir texto do usuário
-    function escapeHtml(text) {
-        return text
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#039;");
+    nav ul {
+        margin-top: 10px;
     }
-});
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+}
