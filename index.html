@@ -3,221 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Babbage: O PAI DO COMPUTADOR</title>
-    
-    <!-- Vinculação do arquivo CSS externo (Certifique-se de que o arquivo 'style.css' está na mesma pasta) -->
+    <title>Charles Babbage - O Pai do Computador</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fonte externa para um visual moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- CABEÇALHO / NAVBAR ESTILO NEWS PORTAL -->
-    <header class="header-portal">
-        <div class="header-container">
-            <div class="header-brand">
-                <span class="brand-text">TECNOLOGIA</span>
-            </div>
-            <nav class="header-nav">
-                <a href="#">últimas notícias</a>
-                <a href="#">inovação</a>
-                <a href="#">história da t.i.</a>
-                <a href="#">ciência</a>
+    <!-- Cabeçalho / Navegação -->
+    <header>
+        <div class="nav-container">
+            <h1 class="logo">C. Babbage</h1>
+            <nav>
+                <ul>
+                    <li><a href="#sobre">Quem Foi</a></li>
+                    <li><a href="#invencoes">Invenções</a></li>
+                    <li><a href="#impacto">Impacto na Tecnologia</a></li>
+                    <li><a href="#curiosidades">Curiosidades</a></li>
+                </ul>
             </nav>
-            <div class="header-search">
-                <input type="text" placeholder="Buscar no portal...">
-                <button type="button">Buscar</button>
-            </div>
         </div>
     </header>
 
-    <div class="sub-bar">
-        <div class="sub-bar-container">
-            <span>ESPECIAL HISTÓRIA DA COMPUTAÇÃO</span>
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Charles Babbage</h2>
+            <p>O matemático e visionário do século XIX considerado o "Pai do Computador".</p>
+            <a href="#sobre" class="btn">Explorar História</a>
         </div>
-    </div>
+    </section>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main class="main-container">
-        
-        <!-- COLUNA DA NOTÍCIA -->
-        <article class="article-container">
-            <header class="article-header">
-                <span class="category-tag">HISTÓRIA DA TECNOLOGIA</span>
-                <h1 class="article-title">Charles Babbage: O homem que projetou o futuro da computação no século XIX</h1>
-                <h2 class="article-subtitle">Conheça a trajetória do matemático britânico que idealizou os primeiros computadores mecânicos da história e transformou a ciência moderna.</h2>
-                
-                <div class="article-meta">
-                    <div class="author-info">
-                        <strong>Por Redação Tecnologia</strong>
-                        <time datetime="2026-09-17">17/09/2026 10h00 • Atualizado há 2 horas</time>
-                    </div>
-                    <div class="text-resizer">
-                        <span>Tamanho da fonte:</span>
-                        <button id="btn-decrease">A-</button>
-                        <button id="btn-increase">A+</button>
-                    </div>
-                </div>
-            </header>
-
-            <div class="lead-image-container">
-                <div class="placeholder-img">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <path d="M21 15l-5-5L5 21"/>
-                    </svg>
-                    <span>Retrato Histórico de Charles Babbage (1791 - 1871)</span>
-                </div>
-                <p class="caption">Charles Babbage foi um polímata, matemático, inventor e engenheiro mecânico britânico.</p>
+    <!-- Seção: Quem foi -->
+    <section id="sobre" class="container">
+        <h2>Quem Foi Charles Babbage?</h2>
+        <div class="grid-2">
+            <div>
+                <p><strong>Charles Babbage</strong> (1791–1871) foi um matemático, inventor, filósofo e engenheiro mecânico britânico. Nascido em Londres, ele viveu durante a Revolução Industrial — uma época em que cálculos matemáticos eram feitos manualmente, gerando erros frequentes em tabelas de navegação e engenharia.</p>
+                <p>Impulsionado pela busca por precisão absoluta, Babbage dedicou sua vida a projetar máquinas mecânicas capazes de realizar cálculos complexos sem a intervenção de erros humanos.</p>
             </div>
-
-            <!-- CORPO DO TEXTO DA NOTÍCIA -->
-            <div class="article-body" id="article-text">
-                <p class="lead-paragraph">
-                    Muito antes da invenção dos microchips, dos circuitos eletrônicos ou da internet, um matemático inglês vislumbrou uma máquina capaz de realizar cálculos complexos sem a intervenção humana. Esse homem era <strong>Charles Babbage</strong>, hoje amplamente reconhecido como o "Pai da Computação".
-                </p>
-
-                <p>
-                    Nascido em Londres no final do século XVIII, Babbage viveu em uma época em que tabelas matemáticas eram calculadas manualmente por humanos conhecidos como "computadores". Esse processo manual gerava inúmeros erros em cálculos de navegação, astronomia e engenharia.
-                </p>
-
-                <h3>A Máquina Diferencial</h3>
-                <p>
-                    Para resolver o problema dos erros humanos, Babbage projetou em 1822 a <strong>Máquina Diferencial</strong>, um dispositivo totalmente mecânico composto por engrenagens, manivelas e rodas dentes que utilizava o método das diferenças finitas para calcular funções polinomials.
-                </p>
-
-                <!-- SIMULADOR INTERATIVO -->
-                <div class="widget-box">
-                    <h4>Simulador da Máquina Diferencial</h4>
-                    <p class="widget-desc">Simule o funcionamento básico da lógica polinomial idealizada por Babbage (f(x) = x² + x + 41):</p>
-                    <div class="sim-controls">
-                        <label for="input-x">Valor de X:</label>
-                        <input type="number" id="input-x" value="1" min="1" max="100">
-                        <button id="btn-calcular">Girar Engrenagens</button>
-                    </div>
-                    <div class="sim-result" id="sim-output">
-                        Resultado: <strong>43</strong>
-                    </div>
-                </div>
-
-                <h3>A Máquina Analítica e a Parceria com Ada Lovelace</h3>
-                <p>
-                    Apesar de não ter concluído a montagem da Máquina Diferencial devido a limitações orçamentárias e técnicas da época, Babbage deu um passo ainda mais audacioso: a <strong>Máquina Analítica</strong>.
-                </p>
-                <p>
-                    Essa nova máquina continha todos os elementos essenciais de um computador moderno:
-                </p>
+            <div class="card-highlight">
+                <h3>Dados Rápidos</h3>
                 <ul>
-                    <li><strong>A Unidade de Processamento:</strong> Chamada por ele de "Mill" (Moinho).</li>
-                    <li><strong>A Memória:</strong> Chamada de "Store" (Armazém).</li>
-                    <li><strong>Entrada de Dados:</strong> Feita através de cartões perfurados.</li>
+                    <li><strong>Nascimento:</strong> 26 de Dezembro de 1791 (Londres)</li>
+                    <li><strong>Falecimento:</strong> 18 de Outubro de 1871 (80 anos)</li>
+                    <li><strong>Profissão:</strong> Matemático e Inventor</li>
+                    <li><strong>Parceria Famosa:</strong> Ada Lovelace</li>
                 </ul>
-
-                <p>
-                    Foi durante o desenvolvimento desse projeto que a matemática <strong>Ada Lovelace</strong> escreveu o primeiro algoritmo da história destinado a ser processado por uma máquina, tornando-se a primeira programadora do mundo.
-                </p>
-
-                <!-- GUIA DE LINHA DO TEMPO EM ABAS -->
-                <div class="timeline-box">
-                    <h4>Linha do Tempo de Babbage</h4>
-                    <div class="tab-buttons">
-                        <button class="tab-btn active" data-tab="tab-1791">1791</button>
-                        <button class="tab-btn" data-tab="tab-1822">1822</button>
-                        <button class="tab-btn" data-tab="tab-1837">1837</button>
-                        <button class="tab-btn" data-tab="tab-1871">1871</button>
-                    </div>
-                    <div class="tab-content active" id="tab-1791">
-                        <strong>Nascimento:</strong> Charles Babbage nasce em 26 de dezembro de 1791 em Londres, Inglaterra.
-                    </div>
-                    <div class="tab-content" id="tab-1822">
-                        <strong>Primeiro Projeto:</strong> Apresenta o conceito da Máquina Diferencial para a Royal Astronomical Society.
-                    </div>
-                    <div class="tab-content" id="tab-1837">
-                        <strong>A Máquina Analítica:</strong> Projeta o primeiro modelo teórico de um computador programável de uso geral.
-                    </div>
-                    <div class="tab-content" id="tab-1871">
-                        <strong>Legado:</strong> Babbage falece aos 79 anos, deixando projetos que só seriam construídos com sucesso décadas mais tarde.
-                    </div>
-                </div>
-
-                <h3>O Legado na Tecnologia Atual</h3>
-                <p>
-                    Embora suas máquinas não tenham sido construídas inteiramente durante sua vida, os desenhos detalhados de Babbage provaram-se perfeitamente funcionais. Em 1991, o Museu de Ciência de Londres construiu uma Máquina Diferencial Nº 2 funcional utilizando exatamente as especificações e materiais disponíveis no século XIX.
-                </p>
             </div>
-
-            <!-- SEÇÃO DE COMENTÁRIOS -->
-            <section class="comments-section">
-                <h3>Comentários (<span id="comments-count">2</span>)</h3>
-
-                <div class="add-comment-box">
-                    <input type="text" id="author-input" placeholder="Seu nome">
-                    <textarea id="comment-input" rows="3" placeholder="Escreva seu comentário..."></textarea>
-                    <button id="btn-submit-comment">Enviar comentário</button>
-                </div>
-
-                <div class="comments-list" id="comments-container">
-                    <div class="comment-item">
-                        <div class="comment-header">
-                            <strong>Carlos Eduardo</strong>
-                            <time>Há 1 hora</time>
-                        </div>
-                        <p class="comment-text">Incrível pensar que a lógica do computador que uso hoje foi pensada no século 19 com engrenagens mecânicas!</p>
-                        <div class="comment-actions">
-                            <button class="like-btn">Gostei (<span class="like-count">12</span>)</button>
-                        </div>
-                    </div>
-
-                    <div class="comment-item">
-                        <div class="comment-header">
-                            <strong>Mariana Silva</strong>
-                            <time>Há 30 minutos</time>
-                        </div>
-                        <p class="comment-text">Ada Lovelace e Charles Babbage formaram a dupla mais importante da história da tecnologia!</p>
-                        <div class="comment-actions">
-                            <button class="like-btn">Gostei (<span class="like-count">8</span>)</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </article>
-
-        <!-- BARRA LATERAL (SIDEBAR) -->
-        <aside class="sidebar-container">
-            <div class="sidebar-block">
-                <h3 class="sidebar-title">Mais lidas</h3>
-                <ol class="top-reads-list">
-                    <li><a href="#">Como Ada Lovelace criou o primeiro programa de computador</a></li>
-                    <li><a href="#">A evolução dos processadores: De engrenagens a transístores</a></li>
-                    <li><a href="#">Museu reconstruiu calculadora de Babbage que funciona perfeitamente</a></li>
-                    <li><a href="#">O que eram os "computadores humanos" do século XVIII?</a></li>
-                </ol>
-            </div>
-
-            <div class="sidebar-block poll-box">
-                <h3 class="sidebar-title">Enquete</h3>
-                <p>Você sabia que o primeiro conceito de computador era totalmente mecânico?</p>
-                <div class="poll-options">
-                    <button class="poll-btn" data-vote="sim">Sim, já sabia</button>
-                    <button class="poll-btn" data-vote="nao">Não, fiquei sabendo agora</button>
-                </div>
-                <div class="poll-results" id="poll-results" style="display: none;">
-                    <p>Sim: <strong id="count-sim">0%</strong></p>
-                    <p>Não: <strong id="count-nao">0%</strong></p>
-                </div>
-            </div>
-        </aside>
-
-    </main>
-    <img src="charles.jpeg">
-
-    <!-- RODAPÉ -->
-    <footer class="footer-portal">
-        <div class="footer-container">
-            <p>&copy; 2026 Portal de Notícias Tecnologia. Todos os direitos reservados.</p>
         </div>
+    </section>
+
+    <!-- Seção: Invenções -->
+    <section id="invencoes" class="bg-light">
+        <div class="container">
+            <h2>Suas Principais Obra-Primas</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Máquina de Diferenças</h3>
+                    <p>Projetada na década de 1820, era um computador mecânico projetado para calcular e tabular funções polinomials. Embora nunca tenha sido totalmente construída enquanto ele vivia, demonstrou o potencial da automação.</p>
+                </div>
+                <div class="card">
+                    <h3>Máquina Analítica</h3>
+                    <p>Idealizada em 1837, é considerada o <strong>primeiro antepassado do computador moderno</strong>. Possuía uma Unidade Central de Processamento (o "Mill"), memória (o "Store") e aceitava entrada via cartões perfurados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Impacto Tecnológico -->
+    <section id="impacto" class="container">
+        <h2>O Impacto na Revolução da Tecnologia</h2>
+        <p class="intro-text">Como os conceitos de Babbage moldaram o futuro da computação moderna:</p>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Conceito da Arquitetura de Computadores</h3>
+                <p>A Máquina Analítica já separava o processamento da memória, uma estrutura equivalente à arquitetura moderna utilizada nos processadores atuais (Arquitetura de Von Neumann).</p>
+            </div>
+            <div class="timeline-item">
+                <h3>A Origem da Programação (Com Ada Lovelace)</h3>
+                <p>Ao trabalhar com a Máquina Analítica, a matemática Ada Lovelace escreveu o primeiro algoritmo da história para ser processado por uma máquina, tornando-se a primeira programadora do mundo.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Uso de Cartões Perfurados</h3>
+                <p>Babbage adaptou a ideia dos teares mecânicos de Jacquard para alimentar dados na máquina, o que mais tarde serviu de base para as primeiras gerações de computadores do século XX (como os da IBM).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Interativa (Curiosidades) -->
+    <section id="curiosidades" class="bg-dark text-white">
+        <div class="container">
+            <h2>Curiosidades</h2>
+            <button id="fact-btn">Clique para ver um fato sobre Babbage</button>
+            <div id="fact-display" class="fact-box">
+                <p>Clique no botão acima para descobrir algo fascinante!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; Site Educativo sobre Charles Babbage | Criado para fins acadêmicos.</p>
     </footer>
 
-    <!-- Vinculação do arquivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 </html>
