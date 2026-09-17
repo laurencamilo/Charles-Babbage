@@ -1,428 +1,222 @@
-/* RESET E ESTILOS BASE */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Babbage: O PAI DO COMPUTADOR</title>
+    
+    <!-- Vinculação do arquivo CSS externo (Certifique-se de que o arquivo 'style.css' está na mesma pasta) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    background-color: #f4f4f4;
-    color: #333333;
-    line-height: 1.6;
-}
+    <!-- CABEÇALHO / NAVBAR ESTILO NEWS PORTAL -->
+    <header class="header-portal">
+        <div class="header-container">
+            <div class="header-brand">
+                <span class="brand-text">TECNOLOGIA</span>
+            </div>
+            <nav class="header-nav">
+                <a href="#">últimas notícias</a>
+                <a href="#">inovação</a>
+                <a href="#">história da t.i.</a>
+                <a href="#">ciência</a>
+            </nav>
+            <div class="header-search">
+                <input type="text" placeholder="Buscar no portal...">
+                <button type="button">Buscar</button>
+            </div>
+        </div>
+    </header>
 
-/* CABEÇALHO / NAVBAR */
-.header-portal {
-    background-color: #c4170c; /* Vermelho característico de portais de notícia */
-    color: #ffffff;
-    padding: 12px 20px;
-}
+    <div class="sub-bar">
+        <div class="sub-bar-container">
+            <span>ESPECIAL HISTÓRIA DA COMPUTAÇÃO</span>
+        </div>
+    </div>
 
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-container">
+        
+        <!-- COLUNA DA NOTÍCIA -->
+        <article class="article-container">
+            <header class="article-header">
+                <span class="category-tag">HISTÓRIA DA TECNOLOGIA</span>
+                <h1 class="article-title">Charles Babbage: O homem que projetou o futuro da computação no século XIX</h1>
+                <h2 class="article-subtitle">Conheça a trajetória do matemático britânico que idealizou os primeiros computadores mecânicos da história e transformou a ciência moderna.</h2>
+                
+                <div class="article-meta">
+                    <div class="author-info">
+                        <strong>Por Redação Tecnologia</strong>
+                        <time datetime="2026-09-17">17/09/2026 10h00 • Atualizado há 2 horas</time>
+                    </div>
+                    <div class="text-resizer">
+                        <span>Tamanho da fonte:</span>
+                        <button id="btn-decrease">A-</button>
+                        <button id="btn-increase">A+</button>
+                    </div>
+                </div>
+            </header>
 
-.header-brand .brand-text {
-    font-size: 26px;
-    font-weight: 900;
-    letter-spacing: -1px;
-}
+            <div class="lead-image-container">
+                <div class="placeholder-img">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                    <span>Retrato Histórico de Charles Babbage (1791 - 1871)</span>
+                </div>
+                <p class="caption">Charles Babbage foi um polímata, matemático, inventor e engenheiro mecânico britânico.</p>
+            </div>
 
-.header-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    margin-right: 15px;
-    text-transform: lowercase;
-}
+            <!-- CORPO DO TEXTO DA NOTÍCIA -->
+            <div class="article-body" id="article-text">
+                <p class="lead-paragraph">
+                    Muito antes da invenção dos microchips, dos circuitos eletrônicos ou da internet, um matemático inglês vislumbrou uma máquina capaz de realizar cálculos complexos sem a intervenção humana. Esse homem era <strong>Charles Babbage</strong>, hoje amplamente reconhecido como o "Pai da Computação".
+                </p>
 
-.header-nav a:hover {
-    text-decoration: underline;
-}
+                <p>
+                    Nascido em Londres no final do século XVIII, Babbage viveu em uma época em que tabelas matemáticas eram calculadas manualmente por humanos conhecidos como "computadores". Esse processo manual gerava inúmeros erros em cálculos de navegação, astronomia e engenharia.
+                </p>
 
-.header-search {
-    display: flex;
-    gap: 5px;
-}
+                <h3>A Máquina Diferencial</h3>
+                <p>
+                    Para resolver o problema dos erros humanos, Babbage projetou em 1822 a <strong>Máquina Diferencial</strong>, um dispositivo totalmente mecânico composto por engrenagens, manivelas e rodas dentes que utilizava o método das diferenças finitas para calcular funções polinomials.
+                </p>
 
-.header-search input {
-    padding: 6px 10px;
-    border: none;
-    border-radius: 3px;
-    font-size: 13px;
-}
+                <!-- SIMULADOR INTERATIVO -->
+                <div class="widget-box">
+                    <h4>Simulador da Máquina Diferencial</h4>
+                    <p class="widget-desc">Simule o funcionamento básico da lógica polinomial idealizada por Babbage (f(x) = x² + x + 41):</p>
+                    <div class="sim-controls">
+                        <label for="input-x">Valor de X:</label>
+                        <input type="number" id="input-x" value="1" min="1" max="100">
+                        <button id="btn-calcular">Girar Engrenagens</button>
+                    </div>
+                    <div class="sim-result" id="sim-output">
+                        Resultado: <strong>43</strong>
+                    </div>
+                </div>
 
-.header-search button {
-    background-color: #800e07;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: bold;
-}
+                <h3>A Máquina Analítica e a Parceria com Ada Lovelace</h3>
+                <p>
+                    Apesar de não ter concluído a montagem da Máquina Diferencial devido a limitações orçamentárias e técnicas da época, Babbage deu um passo ainda mais audacioso: a <strong>Máquina Analítica</strong>.
+                </p>
+                <p>
+                    Essa nova máquina continha todos os elementos essenciais de um computador moderno:
+                </p>
+                <ul>
+                    <li><strong>A Unidade de Processamento:</strong> Chamada por ele de "Mill" (Moinho).</li>
+                    <li><strong>A Memória:</strong> Chamada de "Store" (Armazém).</li>
+                    <li><strong>Entrada de Dados:</strong> Feita através de cartões perfurados.</li>
+                </ul>
 
-.sub-bar {
-    background-color: #222222;
-    color: #ffffff;
-    font-size: 12px;
-    padding: 6px 20px;
-    font-weight: bold;
-}
+                <p>
+                    Foi durante o desenvolvimento desse projeto que a matemática <strong>Ada Lovelace</strong> escreveu o primeiro algoritmo da história destinado a ser processado por uma máquina, tornando-se a primeira programadora do mundo.
+                </p>
 
-.sub-bar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+                <!-- GUIA DE LINHA DO TEMPO EM ABAS -->
+                <div class="timeline-box">
+                    <h4>Linha do Tempo de Babbage</h4>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="tab-1791">1791</button>
+                        <button class="tab-btn" data-tab="tab-1822">1822</button>
+                        <button class="tab-btn" data-tab="tab-1837">1837</button>
+                        <button class="tab-btn" data-tab="tab-1871">1871</button>
+                    </div>
+                    <div class="tab-content active" id="tab-1791">
+                        <strong>Nascimento:</strong> Charles Babbage nasce em 26 de dezembro de 1791 em Londres, Inglaterra.
+                    </div>
+                    <div class="tab-content" id="tab-1822">
+                        <strong>Primeiro Projeto:</strong> Apresenta o conceito da Máquina Diferencial para a Royal Astronomical Society.
+                    </div>
+                    <div class="tab-content" id="tab-1837">
+                        <strong>A Máquina Analítica:</strong> Projeta o primeiro modelo teórico de um computador programável de uso geral.
+                    </div>
+                    <div class="tab-content" id="tab-1871">
+                        <strong>Legado:</strong> Babbage falece aos 79 anos, deixando projetos que só seriam construídos com sucesso décadas mais tarde.
+                    </div>
+                </div>
 
-/* LAYOUT DE GRID */
-.main-container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: 30px;
-}
+                <h3>O Legado na Tecnologia Atual</h3>
+                <p>
+                    Embora suas máquinas não tenham sido construídas inteiramente durante sua vida, os desenhos detalhados de Babbage provaram-se perfeitamente funcionais. Em 1991, o Museu de Ciência de Londres construiu uma Máquina Diferencial Nº 2 funcional utilizando exatamente as especificações e materiais disponíveis no século XIX.
+                </p>
+            </div>
 
-/* ARTIGO */
-.article-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+            <!-- SEÇÃO DE COMENTÁRIOS -->
+            <section class="comments-section">
+                <h3>Comentários (<span id="comments-count">2</span>)</h3>
 
-.category-tag {
-    color: #c4170c;
-    font-weight: bold;
-    font-size: 13px;
-    text-transform: uppercase;
-}
+                <div class="add-comment-box">
+                    <input type="text" id="author-input" placeholder="Seu nome">
+                    <textarea id="comment-input" rows="3" placeholder="Escreva seu comentário..."></textarea>
+                    <button id="btn-submit-comment">Enviar comentário</button>
+                </div>
 
-.article-title {
-    font-size: 32px;
-    line-height: 1.2;
-    color: #111111;
-    margin: 10px 0;
-}
+                <div class="comments-list" id="comments-container">
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <strong>Carlos Eduardo</strong>
+                            <time>Há 1 hora</time>
+                        </div>
+                        <p class="comment-text">Incrível pensar que a lógica do computador que uso hoje foi pensada no século 19 com engrenagens mecânicas!</p>
+                        <div class="comment-actions">
+                            <button class="like-btn">Gostei (<span class="like-count">12</span>)</button>
+                        </div>
+                    </div>
 
-.article-subtitle {
-    font-size: 18px;
-    color: #555555;
-    font-weight: normal;
-    margin-bottom: 20px;
-    line-height: 1.4;
-}
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <strong>Mariana Silva</strong>
+                            <time>Há 30 minutos</time>
+                        </div>
+                        <p class="comment-text">Ada Lovelace e Charles Babbage formaram a dupla mais importante da história da tecnologia!</p>
+                        <div class="comment-actions">
+                            <button class="like-btn">Gostei (<span class="like-count">8</span>)</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
 
-.article-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
-    padding: 10px 0;
-    margin-bottom: 20px;
-    font-size: 12px;
-    color: #666666;
-}
+        <!-- BARRA LATERAL (SIDEBAR) -->
+        <aside class="sidebar-container">
+            <div class="sidebar-block">
+                <h3 class="sidebar-title">Mais lidas</h3>
+                <ol class="top-reads-list">
+                    <li><a href="#">Como Ada Lovelace criou o primeiro programa de computador</a></li>
+                    <li><a href="#">A evolução dos processadores: De engrenagens a transístores</a></li>
+                    <li><a href="#">Museu reconstruiu calculadora de Babbage que funciona perfeitamente</a></li>
+                    <li><a href="#">O que eram os "computadores humanos" do século XVIII?</a></li>
+                </ol>
+            </div>
 
-.text-resizer button {
-    background: #eeeeee;
-    border: 1px solid #ccc;
-    padding: 2px 8px;
-    cursor: pointer;
-    font-weight: bold;
-}
+            <div class="sidebar-block poll-box">
+                <h3 class="sidebar-title">Enquete</h3>
+                <p>Você sabia que o primeiro conceito de computador era totalmente mecânico?</p>
+                <div class="poll-options">
+                    <button class="poll-btn" data-vote="sim">Sim, já sabia</button>
+                    <button class="poll-btn" data-vote="nao">Não, fiquei sabendo agora</button>
+                </div>
+                <div class="poll-results" id="poll-results" style="display: none;">
+                    <p>Sim: <strong id="count-sim">0%</strong></p>
+                    <p>Não: <strong id="count-nao">0%</strong></p>
+                </div>
+            </div>
+        </aside>
 
-/* IMAGEM PRINCIPAL (PLACEHOLDER SVG) */
-.lead-image-container {
-    margin-bottom: 25px;
-}
+    </main>
 
-.placeholder-img {
-    width: 100%;
-    height: 320px;
-    background-color: #e9e9e9;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #666;
-    border-radius: 4px;
-    gap: 10px;
-}
+    <!-- RODAPÉ -->
+    <footer class="footer-portal">
+        <div class="footer-container">
+            <p>&copy; 2026 Portal de Notícias Tecnologia. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
-.caption {
-    font-size: 12px;
-    color: #666;
-    margin-top: 6px;
-}
-
-/* CORPO DO TEXTO */
-.article-body p {
-    font-size: 16px;
-    margin-bottom: 18px;
-    color: #222222;
-}
-
-.article-body p.lead-paragraph {
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.article-body h3 {
-    font-size: 22px;
-    margin: 25px 0 12px 0;
-    color: #c4170c;
-}
-
-.article-body ul {
-    margin: 0 0 20px 20px;
-}
-
-.article-body li {
-    margin-bottom: 8px;
-}
-
-/* WIDGET INTERATIVO: SIMULADOR */
-.widget-box {
-    background: #f9f9f9;
-    border-left: 4px solid #c4170c;
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 0 4px 4px 0;
-}
-
-.widget-box h4 {
-    margin-bottom: 8px;
-    font-size: 16px;
-}
-
-.widget-desc {
-    font-size: 14px !important;
-    color: #555;
-}
-
-.sim-controls {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 12px;
-}
-
-.sim-controls input {
-    width: 60px;
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.sim-controls button {
-    background-color: #c4170c;
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.sim-controls button:hover {
-    background-color: #a01209;
-}
-
-.sim-result {
-    margin-top: 12px;
-    font-size: 15px;
-}
-
-/* TABELA / LINHA DO TEMPO EM ABAS */
-.timeline-box {
-    border: 1px solid #dddddd;
-    padding: 20px;
-    border-radius: 4px;
-    margin: 25px 0;
-}
-
-.timeline-box h4 {
-    margin-bottom: 12px;
-}
-
-.tab-buttons {
-    display: flex;
-    gap: 5px;
-    border-bottom: 2px solid #eee;
-    margin-bottom: 12px;
-}
-
-.tab-btn {
-    background: none;
-    border: none;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #666;
-}
-
-.tab-btn.active {
-    color: #c4170c;
-    border-bottom: 2px solid #c4170c;
-    margin-bottom: -2px;
-}
-
-.tab-content {
-    display: none;
-    font-size: 14px;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-/* SIDEBAR */
-.sidebar-block {
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.sidebar-title {
-    font-size: 16px;
-    border-bottom: 2px solid #c4170c;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-}
-
-.top-reads-list {
-    padding-left: 20px;
-}
-
-.top-reads-list li {
-    margin-bottom: 12px;
-}
-
-.top-reads-list a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.top-reads-list a:hover {
-    color: #c4170c;
-}
-
-.poll-box p {
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.poll-options {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.poll-btn {
-    background: #eeeeee;
-    border: 1px solid #ccc;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 4px;
-    text-align: left;
-    font-size: 13px;
-}
-
-.poll-btn:hover {
-    background: #e2e2e2;
-}
-
-/* COMENTÁRIOS */
-.comments-section {
-    margin-top: 40px;
-    border-top: 2px solid #333;
-    padding-top: 20px;
-}
-
-.add-comment-box {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 20px 0;
-}
-
-.add-comment-box input, .add-comment-box textarea {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.add-comment-box button {
-    align-self: flex-start;
-    background-color: #c4170c;
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.comment-item {
-    border-bottom: 1px solid #eee;
-    padding: 12px 0;
-}
-
-.comment-header {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 5px;
-}
-
-.comment-header time {
-    color: #888;
-}
-
-.comment-text {
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.like-btn {
-    background: none;
-    border: none;
-    color: #c4170c;
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-/* RODAPÉ */
-.footer-portal {
-    background: #222222;
-    color: #888888;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    font-size: 13px;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 850px) {
-    .main-container {
-        grid-template-columns: 1fr;
-    }
-}
+    <!-- Vinculação do arquivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
